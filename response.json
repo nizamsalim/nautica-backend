@@ -88,10 +88,29 @@
             "swell_dir": 152,
             "water_temp_c": 26.5
           }
-        ]
+        ],
+        "revised_weights":{
+          "cloud": 2,         
+          "uv": -2,           
+          "temp_land": 2,     
+          "temp_water": 2,    
+          "wind_speed": -2,   
+          "pressure": 1,      
+          "humidity": -1,     
+          "sig_ht": -4,       
+          "swell_ht": -3,     
+          "gust_speed": -2,   
+          "wind_chill": -2,   
+          "dew_point": -2,    
+          "heat_index": -3  
+        }
       }
     ]
   }
 }
+
+
+
+
 
 

@@ -79,7 +79,7 @@ export interface Hour {
   water_temp_c?: number; // Optional water temperature
 }
 
-export interface HistoryWeatherData{
+export interface ForecastMarineData{
   cloud:number,
   uv:number,
   temp_land:number,
