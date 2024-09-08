@@ -78,3 +78,19 @@ export interface Hour {
   swell_dir?: number; // Optional swell direction
   water_temp_c?: number; // Optional water temperature
 }
+
+export interface HistoryWeatherData{
+  cloud:number,
+  uv:number,
+  temp_land:number,
+  temp_water?:number,
+  wind_speed:number,
+  pressure:number,
+  humidity:number,
+  sig_ht?:number,
+  swell_ht?:number,
+  gust_speed:number,
+  wind_chill:number,
+  dew_point:number,
+  heat_index:number,
+}
