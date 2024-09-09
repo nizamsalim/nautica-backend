@@ -255,7 +255,7 @@ export const predictSuitability = async (req: Request, res: Response) => {
         avg_humidity: dailyForecast.avghumidity,
         wind_speed: c.wind_speed,
         cloud: c.cloud,
-        uv: c.uv,
+        // uv: c.uv,
         wind_degree: c.wind_degree,
         sunrise_time: sunrise,
         sunset_time: sunset,
