@@ -2,13 +2,13 @@ import { ForecastDay } from "../constants/WeatherResponseInterface";
 
 export default function assignRanges(dailyForecasts:ForecastDay[]) {
     let ranges = {
-      cloud: { min: Infinity, max: -Infinity },
-      uv: { min: Infinity, max: -Infinity },
+      cloud: { min: 0, max: 100 },
+      uv: { min: 0, max: 11 },
       temp_land: { min: Infinity, max: -Infinity },
       temp_water: { min: Infinity, max: -Infinity },
       wind_speed: { min: Infinity, max: -Infinity },
       pressure: { min: Infinity, max: -Infinity },
-      humidity: { min: Infinity, max: -Infinity },
+      humidity: { min: 0, max: 100 },
       sig_ht: { min: Infinity, max: -Infinity },
       swell_ht: { min: Infinity, max: -Infinity },
       gust_speed: { min: Infinity, max: -Infinity },
@@ -18,16 +18,6 @@ export default function assignRanges(dailyForecasts:ForecastDay[]) {
     };
     for (let i = 0; i < dailyForecasts.length; i++) {
       const hour = dailyForecasts[i].hour[0];
-      if (hour.cloud < ranges.cloud.min) {
-        ranges.cloud.min = hour.cloud;
-      } else if (hour.cloud > ranges.cloud.min) {
-        ranges.cloud.max = hour.cloud;
-      }
-      if (hour.uv < ranges.uv.min) {
-        ranges.uv.min = hour.uv;
-      } else if (hour.uv > ranges.uv.min) {
-        ranges.uv.max = hour.uv;
-      }
       if (hour.temp_c < ranges.temp_land.min) {
         ranges.temp_land.min = hour.temp_c;
       } else if (hour.temp_c > ranges.temp_land.min) {
@@ -50,12 +40,6 @@ export default function assignRanges(dailyForecasts:ForecastDay[]) {
         ranges.pressure.min = hour.pressure_mb;
       } else if (hour.pressure_mb > ranges.pressure.min) {
         ranges.pressure.max = hour.pressure_mb;
-      }
-  
-      if (hour.humidity < ranges.humidity.min) {
-        ranges.humidity.min = hour.humidity;
-      } else if (hour.humidity > ranges.humidity.min) {
-        ranges.humidity.max = hour.humidity;
       }
   
       if (hour.sig_ht_mt! < ranges.sig_ht.min) {
@@ -96,4 +80,4 @@ export default function assignRanges(dailyForecasts:ForecastDay[]) {
     }
     return ranges;
   }
-  
+
